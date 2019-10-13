@@ -1,6 +1,5 @@
 extends MarginContainer
 
-
 func _on_HostGame_pressed():
 	print("Host Game pressed")
 
