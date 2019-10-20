@@ -7,5 +7,4 @@ func _on_JoinButton_pressed():
 	var password = $VBoxContainer/HSplitContainer/VBoxContainer/PasswordContainer/PasswordField.get_text()
 	var port = $VBoxContainer/HSplitContainer/VBoxContainer/PortContainer/PortField.get_text()
 	if NetworkValidator.validate_port(port) && NetworkValidator.validate_IP(ip):
-		emit_signal("joingame", ip, port, password)
-
+		emit_signal("joingame", ip, port.to_int(), password)

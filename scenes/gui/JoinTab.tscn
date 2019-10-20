@@ -1,10 +1,11 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://scripts/guicomponents/JoinTab.gd" type="Script" id=1]
+[ext_resource path="res://scripts/gui/JoinTab.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Exo2-Bold.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://fonts/Exo2-SemiBold.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://fonts/Exo2-Light.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://textures/gui/grey4.png" type="Texture" id=5]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 100

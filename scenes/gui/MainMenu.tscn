@@ -1,6 +1,6 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
-[ext_resource path="res://scripts/guicomponents/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://scripts/gui/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://textures/gui/grey3.png" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://fonts/Exo2-Black.otf" type="DynamicFontData" id=4]
@@ -9,8 +9,9 @@
 [ext_resource path="res://textures/gui/grey1.png" type="Texture" id=7]
 [ext_resource path="res://fonts/Exo2-SemiBold.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://fonts/Exo2-Medium.otf" type="DynamicFontData" id=9]
-[ext_resource path="res://scenes/gui/guicomponents/HostTab.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/gui/guicomponents/JoinTab.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/gui/HostTab.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/gui/JoinTab.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/gui/Settings.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 90
@@ -189,13 +190,12 @@ margin_top = 49.0
 custom_constants/margin_right = 30
 custom_constants/margin_left = 30
 
-[node name=" Settings " type="ScrollContainer" parent="PanelContainer/RightPanelContainer/TabContainer"]
+[node name=" Settings " parent="PanelContainer/RightPanelContainer/TabContainer" instance=ExtResource( 12 )]
 visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
 margin_top = 49.0
 [connection signal="pressed" from="PanelContainer/LeftPanelContainer/MarginContainer/ButtonsContainer/HostGame" to="." method="_on_HostGame_pressed"]
 [connection signal="pressed" from="PanelContainer/LeftPanelContainer/MarginContainer/ButtonsContainer/JoinGame" to="." method="_on_JoinGame_pressed"]
 [connection signal="pressed" from="PanelContainer/LeftPanelContainer/MarginContainer/ButtonsContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="PanelContainer/LeftPanelContainer/MarginContainer/ButtonsContainer/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="hostgame" from="PanelContainer/RightPanelContainer/TabContainer/ Host Game " to="." method="_on__Host_Game__hostgame"]
+[connection signal="joingame" from="PanelContainer/RightPanelContainer/TabContainer/ Join Game " to="." method="_on__Join_Game__joingame"]

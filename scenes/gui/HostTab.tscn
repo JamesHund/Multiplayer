@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://scripts/guicomponents/HostTab.gd" type="Script" id=1]
+[ext_resource path="res://scripts/gui/HostTab.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Exo2-Bold.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://fonts/Exo2-SemiBold.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://fonts/Exo2-Light.otf" type="DynamicFontData" id=4]
