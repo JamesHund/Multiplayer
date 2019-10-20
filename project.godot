@@ -19,6 +19,10 @@ config/name="Multiplayer"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+NetworkValidator="*res://scripts/utils/NetworkValidator.gd"
+
 [display]
 
 window/size/width=1600
