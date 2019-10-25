@@ -1,6 +1,7 @@
 extends Node
 
-var player_name : String
+var settings
+var player_name
 
 func _ready():
 	var file = File.new()
@@ -14,11 +15,21 @@ func _ready():
 		return null
 	else:
 		print("settings has been parsed correctly")
-	var settings = result.get_result().get("Settings")
-	var player_name = settings.get("player_name")
-	print("player_name" + player_name)
+	settings = result.get_result()
+	player_name = settings.get("player_name")
+	print_settings()
 	
 func apply_settings():
-	var dict = {"Settings" : {"player_name" : player_name}}
+	var dict = {"player_name" : player_name}
+	var file = File.new()
+	if file.open("res://data/settings.json", File.WRITE) != 0:
+		print("Error opening settings file for writing")
+		return
+	file.store_line(JSON.print(dict))
+	file.close()
+	
+func print_settings():
+	print("player_name: " + player_name)
+	
 	
 	

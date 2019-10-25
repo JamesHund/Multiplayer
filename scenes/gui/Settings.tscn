@@ -164,4 +164,5 @@ size_flags_vertical = 3
 custom_styles/normal = SubResource( 7 )
 custom_fonts/font = SubResource( 8 )
 text = "Apply"
+[connection signal="visibility_changed" from="." to="." method="_on_Settings_visibility_changed"]
 [connection signal="pressed" from="VBoxContainer/ButtonContainer/ApplyButton" to="." method="_on_ApplyButton_pressed"]
