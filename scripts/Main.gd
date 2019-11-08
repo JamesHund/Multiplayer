@@ -17,18 +17,23 @@ func init_server(port,password):
 	server_password = password
 	$LevelManager.load_world("DefaultWorld")
 	get_tree().connect("network_peer_connected", self, "player_connected")
+	$LevelManager.load_players()
 	print("initialized as server with public ip: " + str(IP.get_local_addresses()[2]))
 	print("local ip: " + str(IP.get_local_addresses()[1]))
 	
 func init_client(ip, port, password):
+	$GUIManager.hide_MainMenu()
+	$LevelManager.load_world("DefaultWorld")
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_client(ip, port)
 	get_tree().set_network_peer(peer)
+	$LevelManager.load_players()
 	my_info = SettingsData.player_name
 	
 func player_connected(id):
 	print("player: " + str(id) + " connected")
 	rpc_id(id,"register_player", my_info)
+	$LevelManager.rpc("load_players")
 	
 remote func register_player(info):
 	var id = get_tree().get_rpc_sender_id()
